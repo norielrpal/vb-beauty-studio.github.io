@@ -1,0 +1,775 @@
+/******************************************
+/* base styles
+/*******************************************/
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+footer, header, menu, nav, section {
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+html {
+  display: flex;
+  background: linear-gradient(to left, rgba(255, 110, 134, 0.4), rgb(255, 200, 200, 0.128), rgb(255, 110, 135, 0.4));
+  color: #666666;
+  font-size: 62.5%;
+  justify-content: center;
+}
+
+body {
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  background: linear-gradient(to left, rgba(255, 110, 134, 0.4), rgb(255, 200, 200, 0.128), rgb(255, 110, 135, 0.4));
+  font-family: 'Raleway', sans-serif;  
+  max-width: 1100px;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: .25rem;
+  padding: 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 2.5rem;
+  padding: 1rem .5rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-justify: auto;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #666666;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.topnav .blk-btn {
+  align-self: center;
+	background-color: rgb(249, 140, 172);
+  border: 1px solid rgb(249, 140, 172);
+  border-radius: .5rem;
+	color: #ebebeb;
+	padding: 2rem;
+  font-family: 'Raleway', sans-serif;
+	font-size: 1.2rem;
+	text-decoration: none;
+  text-transform: uppercase;
+}
+
+.blk-btn:hover {
+  background: #ebebeb;
+  border: 1px solid #666666;
+  color: #666666;
+  text-decoration: none;
+}
+
+/******************************************
+/* top navigation
+/*******************************************/
+
+.topnav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 6rem;
+  position: fixed;
+  width: 1098px;
+  background: rgb(255, 199, 208);
+}
+
+.topnav.nav-up {
+  top: -6rem; /* Hide the nav */
+}
+
+.topnav ul {
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-around;
+  list-style-type: none;
+  max-width: 1100px;
+  text-transform: uppercase;
+  width: 100rem;
+  padding: 0;
+  margin: 0;
+}
+
+.topnav ul li {
+  position: relative;
+}
+
+.topnav ul li a {
+  color: inherit;
+  text-decoration: none;
+  padding: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.topnav ul li a::before, .topnav ul li a::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  bottom: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+  width: 0;
+}
+
+.topnav ul li a::before {
+  left: 0;
+}
+
+.topnav ul li a::after {
+  right: 0;
+}
+
+.topnav ul li a:hover::before, .topnav ul li a:hover::after {
+  width: 50%;
+}
+
+
+/******************************************
+/* main
+/*******************************************/
+
+header {
+  background: url("../images/studio.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 50rem;
+  justify-content: flex-start;
+  padding-left: 10rem;
+  padding-top: 13rem;
+  margin: 6rem 1rem 1rem 1rem;
+}
+
+@font-face {
+  font-family: "YourCustomFont";
+  src: url("../fonts/Wedding.otf") format("truetype");
+}
+
+.logo {
+  background: rgba(0, 0, 0, 0.538);
+  border-radius: 0 5rem 0 5rem;
+  padding: 2rem 5rem;
+  width: 42rem;
+}
+
+
+.logo:hover #down {
+    text-shadow: 6px 6px 30px rgb(255, 96, 144);
+    font-size: 6.5rem;
+}
+
+#up, #mid {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#up, #mid, #down {
+  text-shadow: 1px 1px 10px rgb(249, 140, 172);
+}
+
+#up {
+  font-size: 6.5rem;
+  letter-spacing: .31rem;
+  font-weight: 700;
+}
+
+#mid {
+  font-size: 4.2rem;
+  letter-spacing: .31rem;
+  font-weight: 700;
+}
+
+#down {
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 1rem;
+  padding-top: .5rem;
+  text-transform: none;
+  text-align: center;
+  font-family: "YourCustomFont";
+  transition: font-size 0.3s ease;
+}
+
+/******************************************
+/* welcome
+/*******************************************/
+
+.welcome {
+  align-items: center;
+  display: flex;
+  background: linear-gradient(to left, rgba(255, 110, 134, 0.4), rgb(255, 200, 200, 0.128), rgb(255, 110, 135, 0.4));
+  border-radius: 1rem;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 1rem;
+  padding: 5rem 0 8rem 0;
+}
+
+.welcome > h2, .welcome > p {
+  width: 65rem;
+}
+.welcome > h2 {
+  font-family: "YourCustomFont";
+  text-transform: none;
+  font-size: 6rem;
+  line-height: .4;
+}
+
+.welcome > p span {
+  color: rgb(255, 156, 156);
+  text-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+
+.welcome > p + p {
+  padding-top: 2rem;
+}
+
+/******************************************
+/* lookbook
+/*******************************************/
+
+.lookbook-flex {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lookbook-grid {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+.lookbook-grid section {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.lookbook-grid img {
+  border-radius: 2rem;
+  margin: .5rem;
+  padding: 5px;
+}
+
+.img-1-2 {
+  height: 70rem;
+  object-fit: cover;
+  object-position: center;
+  width: 35rem;
+}
+
+.img-1-1 {
+  height: 35rem;
+  object-fit: cover;
+  object-position: center;
+  width: 35rem;
+}
+
+/******************************************
+/* staff
+/*******************************************/
+
+.staff {
+  align-items: center;
+  background: linear-gradient(to left, rgba(255, 110, 134, 0.4), rgb(255, 200, 200, 0.128), rgb(255, 110, 135, 0.4));
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: center;
+  margin: 1rem;
+  padding: 2.6rem;
+}
+
+.staff > section {
+  display: grid;
+  gap: 5rem 10rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+}
+
+.staff > section > .staff-img {
+  align-items: center;
+  border-radius: 30rem;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 30rem;
+  justify-content: center;
+  transition: all .2s ease-in-out;
+  width: 30rem;
+}
+
+.staff-txt-container {
+  align-items: center;
+  color: transparent;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 30rem;
+  justify-content: center;
+  width: 30rem;
+}
+
+.staff > section > .staff-img > .staff-txt-container > h5 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.staff > section > .staff-img > .staff-txt-container > h6 {
+  font-size: 2rem;
+}
+
+#staff-anaya {
+  background: url(../images/mark-benson-anaya.jpg);
+}
+
+#staff-rolluque {
+  background: url(../images/cristina-rolluque.jpg);
+}
+
+#staff-reyes {
+  background: url(../images/lorevi-reyes.jpg);
+}
+
+#staff-nite {
+  background: url(../images/lorica-jane-nite.jpg);
+}
+
+/******************************************
+/* services
+/*******************************************/
+
+.services {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.services li {
+  font-size: 1.8rem;
+  padding: .5rem;
+}
+
+/******************************************
+/* location
+/*******************************************/
+
+.location {
+  background: #ffffff;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 2.6rem;
+}
+
+.location-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.location img {
+  border: 1px solid #cecece;
+  border-radius: 1rem;
+  height: 30rem;
+  object-fit: cover;
+  object-position: center;
+  width: 45rem;
+}
+
+.location address, .location li {
+  font-size: 1.8rem;
+  padding: .5rem;
+}
+
+/******************************************
+/* contact
+/*******************************************/
+
+.grid-flex-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#contact p {
+  padding-bottom: 3.5rem;
+  width: 60rem;
+}
+
+#contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+#subject, #message, #submit {
+  grid-column: 1/3;
+}
+
+/* forms */
+
+input[type="tel"],
+input[type="text"],
+input[type="email"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: solid 1px transparent;
+  color: #666666;
+  outline: 0;
+  padding: 1rem;
+  resize: none;
+  text-decoration: none;
+}
+
+input[type="tel"],
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #cecece;
+}
+
+::-moz-selection, ::selection {
+  background: #666666;
+  color: #eeeeee;
+}
+
+#first, #last, #phone, #email, #subject {
+  height: 5rem;
+}
+
+#first, #last, #phone, #email {  
+  width: 29.5rem;
+}
+
+#subject, #message {
+  width: 60rem;
+}
+
+#message {
+  height: 30rem;
+}
+
+#submit {
+  align-self: center;
+	background-color: rgb(249, 140, 172);
+  border: 1px solid rgb(249, 140, 172);
+  border-radius: 1rem;
+	color: #ebebeb;
+	padding: 2rem;
+  font-family: 'Raleway', sans-serif;
+	font-size: 1.2rem;
+	text-decoration: none;
+  text-transform: uppercase;
+  width: 60rem;
+}
+
+#submit:hover {
+  background: #ebebeb;
+  border: 1px solid #666666;
+  color: #666666;
+}
+
+.alert {
+  display: none;
+  padding: 25px;
+  background-color: #ffaca6a7;
+  color: white;
+  margin-bottom: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 20%;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+
+.alert.show {
+  display: block;
+}
+
+/******************************************
+/* footer
+/*******************************************/
+
+.main-footer {
+  margin: 1rem;
+  margin-top: 2rem;
+  line-height: 1.5;
+  padding: 4rem 30rem;
+  color: #000000;
+  background-color: #acacac;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  background-image: url("../images/studio.jpg");
+  background-position: bottom;
+}
+
+.main-footer h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .25rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.main-footer div.main{
+  padding: 1rem 4rem;
+  background: white;
+  border: 8px solid rgb(255, 199, 208);
+}
+
+/******************************************
+/* goTop
+/*******************************************/
+.goTop {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 18px 20px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #ff448f;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  right: 1.875rem;
+  bottom: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  -webkit-transform: translateY(150px);
+  transform: translateY(150px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+.goTop:after {
+  content: "\f077";
+}
+.goTop:hover {
+  background-color: #feb5cd;
+  color: #fff;
+}
+.goTop:focus {
+  outline: none;
+}
+.goTop.active {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+
+/******************************************
+/* media queries
+/*******************************************/
+
+/* mouse & trackball */
+@media (hover: hover){
+  .staff > section > .staff-img:hover {
+    transform: scale(1.1);
+  }
+
+  .staff-txt-container:hover {
+    color: white;
+  }
+
+  .staff > section > .staff-img > .staff-txt-container:hover {
+    color: white;
+  }
+
+  #staff-anaya:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(../images/mark-benson-anaya.jpg);
+  }
+
+  #staff-rolluque:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(../images/cristina-rolluque.jpg);
+  }
+
+  #staff-reyes:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(../images/lorevi-reyes.jpg);
+  }
+
+  #staff-nite:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(../images/lorica-jane-nite.jpg);
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .welcome {
+    padding: 5rem 2rem;
+  }
+
+  .welcome > h2 {
+    width: 40rem;
+  }
+
+  .welcome > p {
+    width: auto;
+  }
+
+  .staff > section {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  .topnav {
+    width: 700px;
+  }
+
+}
+
+@media screen and (max-width: 800px) { 
+
+  .topnav {
+    width: 500px;
+  }
+
+  .services {
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  .services li:last-of-type {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  header {
+    margin: 1rem;
+  }
+
+  .topnav {
+    width: 400px;
+  }
+
+  #mid {
+    font-size: 4.1rem;
+  }
+
+  .lookbook-grid {
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  .lookbook-grid .img-1-1 {
+    width: 450px;
+  }
+
+  .lookbook-grid .img-1-2 {
+    width: 450px;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+
+  header {
+    margin-top: 6rem;
+  }
+
+  .topnav {
+    width: 780px;
+  }
+
+  .location-flex {
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  .location h4 {
+    text-align: center;
+  }
+
+  .location address {
+    padding-bottom: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    width: 100vw;
+  }
+
+  .img-1-1 {
+    width: calc(33.3333vw - 4rem);
+  }
+
+  .img-1-2 {
+    width: calc(33.3333vw - 4rem);
+  }
+
+  .staff > section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  #contact {
+    padding: 0 calc(50vw - 30rem);
+  }
+
+}
+
